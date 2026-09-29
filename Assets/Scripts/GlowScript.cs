@@ -7,6 +7,7 @@ public class GlowScript : MonoBehaviour
     void Start()
     {
         sprite = this.gameObject;
+        sprite.SetActive(false);
     }
 
     // Update is called once per frame

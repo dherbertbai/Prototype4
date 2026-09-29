@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameScript : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameScript : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         glow = GameObject.FindGameObjectWithTag("Glow").GetComponent<GlowScript>();
-        time = 0;
+        time = 8;
     }
 
     // Update is called once per frame
@@ -44,6 +45,15 @@ public class GameScript : MonoBehaviour
         else if (time >= 6 && time < 8)
         {
             Dawn();
+        }
+
+        if (Keyboard.current.spaceKey.isPressed)
+        {
+            timeSpeed = 2;
+        }
+        else
+        {
+            timeSpeed = 0.5f;
         }
     }
 
